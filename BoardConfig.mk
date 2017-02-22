@@ -46,11 +46,15 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 419439400 # 0x19000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000 --board 1450664547 
 
-#in case we want to build kernel from source
-#TARGET_KERNEL_SOURCE := kernel/meizu/meilan2
-#TARGET_KERNEL_CONFIG := cyanogenmod_meilan2_defconfig
+#in case you want to build kernel from prebuilt image
+# comment out the following 4 lines
+TARGET_KERNEL_SOURCE := kernel/meizu/meilan2
+TARGET_KERNEL_CONFIG := ginr6735_65c_l1_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+# end of commented lines
 
-#for now lets use prebuilt
+#prebuilt kernel image
 TARGET_PREBUILT_KERNEL := device/meizu/meilan2/prebuilt/Image.gz-dtb
 BOARD_HAS_NO_SELECT_BUTTON := true
 #recovery

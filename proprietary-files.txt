@@ -271,6 +271,7 @@ lib{,64}/libextem.so
 
 #OpenGL
 lib{,64}/libdpframework.so
+lib{,64}/libgas.so
 lib{,64}/libged.so
 lib{,64}/libgpu_aux.so
 lib{,64}/hw/gralloc.mt6735.so
@@ -283,16 +284,17 @@ lib{,64}/hw/gralloc.mt6735.so
 #lib64/libGLESv3.so
 lib{,64}/libgralloc_extra.so
 
-lib{,64}/libion.so
+#lib{,64}/libion.so
 lib{,64}/libmtk_drvb.so
 lib{,64}/libion_mtk.so
 lib{,64}/libm4u.so
 lib{,64}/libpq_prot.so
+lib{,64}/libpqservice.so
 lib{,64}/hw/hwcomposer.mt6735.so
 lib{,64}/libbwc.so
 lib{,64}/libgui_ext.so
 -lib{,64}/libperfservice.so
-#lib{,64}/libperfservicenative.so
+lib{,64}/libperfservicenative.so
 lib{,64}/libui_ext.so
 #lib{,64}/libui.so
 

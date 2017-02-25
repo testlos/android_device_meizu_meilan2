@@ -159,7 +159,7 @@ subsystem adf
 /dev/ccci_aud             0660   media      media
 /dev/ccci2_aud            0660   media      media
 /dev/eemcs_aud            0660   media      media
-
+/dev/ion                  0660   system     graphics
 /dev/irtx              0660   system     system
 
 # SGX device node

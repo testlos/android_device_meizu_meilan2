@@ -67,8 +67,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 
-#PRODUCT_PACKAGES += \
-#    libion \
+PRODUCT_PACKAGES += \
+    libion \
+
 #    libmockdrmcryptoplugin \
 #    libaudio-resampler \
 #    libtinycompress \

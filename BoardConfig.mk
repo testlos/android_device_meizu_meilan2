@@ -2,6 +2,7 @@ DEVICE_PATH := device/meizu/meilan2
 VENDOR_PATH := vendor/meizu/meilan2
 
 USE_CAMERA_STUB := true
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # inherit from the proprietary version
 -include $(VENDOR_PATH)/BoardConfigVendor.mk

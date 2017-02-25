@@ -124,8 +124,11 @@ ril.current.share_modem=2 \
 ro.mtk_gps_support=1 \
 ro.mtk_agps_app=1 \
 persist.debug.xlog.enable=1 \
+
+# These additionals go to /system/build.prop
+ADDITIONAL_BUILD_PROPERTIES += \
 cm.updater.type=plain \
-cm.updater.uri=https://drive.google.com/uc?export=download&id=0Bwzrxcf3P6N6QnVsQXFfV2xjc1E \
+cm.updater.uri=https://raw.githubusercontent.com/divis1969/update-site/master/updates-12.1.json \
 
 
 # Removed for now

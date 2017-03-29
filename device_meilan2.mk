@@ -36,15 +36,10 @@ PRODUCT_COPY_FILES += \
     device/meizu/meilan2/rootdir/fstab.mt6735:root/fstab.mt6735 \
     device/meizu/meilan2/rootdir/fstab.swap:root/fstab.swap \
     device/meizu/meilan2/rootdir/ueventd.rc:root/ueventd.rc \
-    device/meizu/meilan2/etc/media_codecs.xml:system/etc/media_codecs.xml \
     device/meizu/meilan2/etc/init/audioserver.rc:system/etc/init/audioserver.rc \
     device/meizu/meilan2/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
     device/meizu/meilan2/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
     device/meizu/meilan2/etc/init/rild.rc:system/etc/init/rild.rc \
-    device/meizu/meilan2/media_profiles.xml:system/etc/media_profiles.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
@@ -67,17 +62,46 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 
+# Audio
 PRODUCT_PACKAGES += \
-    libion \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    libaudiopolicymanagerdefault \
+    libtinyalsa \
+    libtinycompress \
+    libtinymix \
+    libtinyxml \
+    libfs_mgr
 
-#    libmockdrmcryptoplugin \
-#    libaudio-resampler \
-#    libtinycompress \
-#    libtinyxml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml
+
+# Display
+PRODUCT_PACKAGES += \
+    libion
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
+
+# Media
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml \
+    $(LOCAL_PATH)/configs/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
+    $(LOCAL_PATH)/configs/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # RIL
-PRODUCT_PACKAGES += \
-    gsm0710muxd
+#PRODUCT_PACKAGES += \
+#    gsm0710muxd
 
 PRODUCT_PACKAGES += \
     Torch \
@@ -88,7 +112,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += meizupshelper
 
-PRODUCT_PACKAGES += power.mt6735
+# Power
+PRODUCT_PACKAGES += \
+    power.mt6735
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -101,17 +127,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/meizu/meilan2/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default
+# Audio componets from source
+#PRODUCT_PACKAGES += \
+#    audio.usb.default \
+#    audio.r_submix.default
+
+# BT A2DP
+#PRODUCT_COPY_FILES += \
+#    vendor/meizu/meilan2/proprietary/vendor/lib/hw/audio.a2dp.blueangel.so:system/vendor/lib/hw/audio.a2dp.mt6735.so
 
 # Supplementary/Addon
 PRODUCT_PACKAGES += \
     MtkCamera libDocVfbEngineLib_m81 libpanorama
 
 #    EngineerMode \
+
 #libmeizucamera
 
 #PRODUCT_PACKAGES += stlport_shared

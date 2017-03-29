@@ -61,7 +61,7 @@ on fs
     symlink /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram /dev/block/platform/mtk-msdc.0/by-name/nvram
     symlink /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/proinfo /dev/block/platform/mtk-msdc.0/by-name/proinfo
     chown root system /dev/block/platform/mtk-msdc.0/by-name/nvram
-    chmod 0770 /dev/block/platform/mtk-msdc.0/by-name/nvram
+    chmod 0775 /dev/block/platform/mtk-msdc.0/by-name/nvram
     chown root system /dev/block/platform/mtk-msdc.0/by-name/proinfo
     chmod 0770 /dev/block/platform/mtk-msdc.0/by-name/proinfo
 
@@ -137,7 +137,7 @@ on post-fs-data
     # mkdir /data/nvram 0770 root system
     # We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
-    chmod 0770 /nvdata
+    chmod 0775 /nvdata
     symlink /nvdata /data/nvram
 
     # Set SELinux security contexts on upgrade or policy update.

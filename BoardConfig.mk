@@ -41,6 +41,10 @@ TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_USERIMAGES_USE_EXT4:=true
 
+# Audio
+#USE_CUSTOM_AUDIO_POLICY := 1
+BOARD_USES_MTK_AUDIO := true
+
 TARGET_BOOTLOADER_BOARD_NAME := mt6735
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive

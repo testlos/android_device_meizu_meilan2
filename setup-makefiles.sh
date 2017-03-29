@@ -150,10 +150,13 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),porridge)
+ifeq (\$(TARGET_DEVICE),meilan2)
 ifeq (\$(MTKPATH),)
 
 # Proprietary Modules go here
+
+ifeq ("yes","no")
+ifneq (\$(TARGET_BUILD_VARIANT),user)
 include \$(CLEAR_VARS)
 LOCAL_MODULE := MTKLogger
 LOCAL_MODULE_OWNER := $VENDOR
@@ -163,6 +166,7 @@ LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := platform
 include \$(BUILD_PREBUILT)
+endif
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := YGPS
@@ -173,7 +177,9 @@ LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := platform
 include \$(BUILD_PREBUILT)
+endif #yes/no
 
+ifeq (\$(USE_CUSTOM_AUDIO_POLICY), 1)
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libaudiopolicymanager
 LOCAL_MODULE_OWNER := $VENDOR
@@ -193,6 +199,7 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MULTILIB := 64
 LOCAL_SRC_FILES_64 := proprietary/lib64/libaudiopolicymanager.so
 include \$(BUILD_PREBUILT)
+endif # USE_CUSTOM_AUDIO_POLICY
 
 endif
 endif

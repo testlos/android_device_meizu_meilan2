@@ -131,13 +131,14 @@ lib{,64}/libfeatureio.so
 lib{,64}/libfile_op.so
 lib{,64}/libimageio_plat_drv.so
 lib{,64}/libimageio.so
-lib{,64}/libJpgDecPipe.so
-lib{,64}/libSwJpgCodec.so
+lib/libJpgDecPipe.so
+lib/libSwJpgCodec.so
 lib{,64}/libJpgEncPipe.so
-lib{,64}/libmhalImageCodec.so
+lib/libmhalImageCodec.so
+lib{,64}/libmtkcamera_client.so
 lib{,64}/libmtkjpeg.so
 lib{,64}/libn3d3a.so
-lib{,64}/libcam.sdkclient.so
+lib{,64}/libSonyIMX230PdafLibrary.so
 lib{,64}/hw/camera.mt6735.so
 
 # Media

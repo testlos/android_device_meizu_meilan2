@@ -6,11 +6,11 @@ Getting Started
 
 Initialize a repository with LineageOS:
 
-    repo init -u git://github.com/divis1969/android.git -b los-14.1-meilan2
+    repo init -u git://github.com/divis1969/android.git -b los-14.1-kernel-3.18-meilan2
 
 Optinally use a specific manifest (not a tip):
 
-    repo init -u git://github.com/divis1969/android.git -b los-14.1-meilan2 -m los-14.1-meilan2-v0.6.xml
+    repo init -u git://github.com/divis1969/android.git -b los-14.1-kernel-3.18-meilan2 -m los-14.1-kernel-3.18-meilan2-v0.1.xml
 
 Build the code:
 
@@ -33,18 +33,22 @@ Current state
 - GPS
 - Bluetooth
 - Sensors
-- Camera
 
 Known Issues
 -------------
-- Meizu Camera App is crasing when switching to front camera
-- Android Camera App is crasing when recording video begins
-- Hardware OMX codecs are not working
+- Camera sensors are not yet ported correctly, Camera App is crasing when switching to front camera
+- Double tap is not yet ported
+- 
 
 All issues: https://github.com/divis1969/android_device_meizu_meilan2/issues
 
 Change log
 ----------
+
+### v0.1 (LineageOS-14.1/kernel-3.18)
+- Most Meilan2-specific drivers ported to 3.18
+- Revert basck SELinux policy version 29
+- Hardware OMX codecs are working
 
 ### v0.6 (LineageOS)
 - Upmerge to the LineageOS cm-14.1 branch tip (based on android-7.1.2_r29)
